@@ -1,4 +1,4 @@
-# GeoBook 1E — Linux Mint Fixes
+# GeoBook 1E - Linux Mint Fixes
 
 Fixes for the two most commonly reported Linux problems on the **Geo GeoBook 1E**
 education laptop: flaky Wi-Fi and a touchpad that moves the cursor but won't
@@ -7,10 +7,10 @@ on a whole class of budget/education laptops (not just the GeoBook), so the
 fixes below draw on existing upstream and community work rather than
 reinventing anything.
 
-This laptop has a rough reputation in Linux/IT-admin circles — see the
-[EduGeek "Geo GeoBook 1E Education Laptops - HORRIBLE!" thread](https://www.edugeek.net/forums/hardware/)
+This laptop has a rough reputation in Linux/IT-admin circles - see the
+[EduGeek "Geo GeoBook 1E Education Laptops - HORRIBLE!" thread](https://www.edugeek.net/forums/topic/198303-geo-geobook-1e-education-laptops-horrible/#comment-1790165)
 for the scale of the problem. This repo exists to give people a working,
-scripted fix instead of trawling that thread.
+scripted fix instead of scouring that thread.
 
 ## Affected hardware
 
@@ -48,7 +48,7 @@ Run:
 sudo scripts/fix-wifi-rtl8821ce.sh
 ```
 
-Then **fully power off** (not just reboot) and power back on — the card
+Then **fully power off** (not just reboot) and power back on - the card
 needs a cold power cycle to reload its firmware cleanly under the new driver.
 
 See [`scripts/fix-wifi-rtl8821ce.sh`](scripts/fix-wifi-rtl8821ce.sh) for
@@ -68,7 +68,7 @@ were needed to make it work properly:
   causes clicks to silently fail while movement still works.
 - An earlier fix so the driver doesn't fail to bind at all on reset.
 
-Both are merged into mainline Linux — **this is not a driver to install,
+Both are merged into mainline Linux - **this is not a driver to install,
 it's a kernel-version issue.** If you're on an older kernel that predates
 these fixes, upgrading resolves it.
 
@@ -82,7 +82,7 @@ If it tells you to upgrade, do so via Linux Mint's Update Manager
 (**View → Linux Kernels**, pick a newer one), or:
 
 ```bash
-sudo apt install linux-generic-hwe-22.04   # or whatever HWE meta-package your Mint version offers
+sudo apt install linux-generic-hwe-22.04   #the HWE meta-package your Mint version offers
 ```
 
 Reboot afterwards and re-run the check script to confirm.
